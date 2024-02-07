@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "e87987fb-7a88-4296-9222-ae443303ad2a",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29618302"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"sahil\",\r\n    \"email\": \"sahil@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/allTransaction?page=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"allTransaction"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw or Deposit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\": \"12000\",\r\n    \"transactionType\": \"deposit\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/withdrawOrDepositCash",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"withdrawOrDepositCash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/bankers/allCustomers",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bankers",
+						"allCustomers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/bankers/customerTransaction/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bankers",
+						"customerTransaction",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "97d5e636157da0844608f54a316fd8cb937f",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
